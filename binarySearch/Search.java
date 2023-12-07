@@ -1,23 +1,24 @@
 public class Search {
     public static void main(String args[]) {
         double numericalInput = 0d;
+        String argument = "";
         boolean isDigit = true;
+
         try {
             numericalInput = Double.parseDouble(args[0]);
         } catch (NumberFormatException nfe) {
             isDigit = false;
+
+            for (int i = 0; i < args.length; i++) {
+                if (i != 0)
+                    argument += " ";
+    
+                argument += args[i];
+            }
         }
 
-        String argument = "\0";
-        for (int i = 0; i < args.length; i++) {
-            if (i != 0)
-                argument += " ";
-
-            argument += args[i];
-        }
-
-        double[] floatingNumbers = {-451.98, -3.25, -.58, 0, 10.5, 58.95, 152.456, 478.652};
-        String[] names = {"Gabriel Barros", "Iorhana Cleia", "Matheus Marques", "Vinicius Nascimento"};
+        double floatingNumbers[] = {-451.98, -3.25, -.58, 0, 10.5, 58.95, 152.456, 478.652};
+        String names[] = {"Gabriel Barros", "Iorhana Cleia", "Matheus Marques", "Vinicius Nascimento"};
 
         int searchResult = -1;
         if (isDigit)
@@ -57,9 +58,9 @@ public class Search {
 
         int middle = (start + end) / 2;
 
-        if (arr[middle] == target)
+        if (arr[middle].compareTo(target) == 0)
            return middle;
-        else if (target.compareTo(arr[middle]) < 0)
+        else if (target.compareTo(arr[middle]) > 0)
            return search(arr, target, middle + 1, end);
         else
            return search(arr, target, start, middle - 1);

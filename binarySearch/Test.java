@@ -1,20 +1,21 @@
 public class Test {
     public static void main(String[] args) {
-        double input = 0d;
+        String names[] = {"Gabriel Barros", "Iorhana Cleia", "Matheus Marques", "Vinicius Nascimento"};
 
-        boolean isDigit = true;
-
-        try {
-            input = Double.parseDouble(args[0]);
-        } catch(NumberFormatException nfe) {
-            System.out.println("Non numerical value.");
-            isDigit = false;
+        String argument = "";
+        for (int i = 0; i < args.length; i++) {
+            if (i != 0)
+                argument += " ";
+            
+            argument += args[i];
         }
 
-        
-        if (isDigit)
-            System.out.println("Digit value: " + input);
-        else 
-            System.out.println("String value: " + args[0]);
+        System.out.println("Array output: ");
+        for (int i = 0; i < names[0].length(); i++)
+            System.out.println("Character: " + names[0].charAt(i));
+
+        System.out.println("Command Line Argument output: ");
+        for (int i = 0; i < argument.length(); i++)
+            System.out.println("Char: " + argument.charAt(i));
     } 
 }
