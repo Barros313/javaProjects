@@ -1,13 +1,10 @@
-import exercises.animal.*;
+import exercises.innerclass.*;
 
 public class Test {
     public static void main(String[] args) {
-        Animal myAnimal = new Animal();
-        Animal myPig = new Pig();
-        Animal myDog = new Dog();
+        Outer outerObject = new Outer();
+        Outer.Inner innerObject = outerObject.new Inner();
 
-        myAnimal.animalSound();
-        myPig.animalSound();
-        myDog.animalSound();
+        System.out.println(outerObject.x + innerObject.y);
     }
 }
