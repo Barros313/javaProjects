@@ -1,5 +1,7 @@
+package binarySearch;
+
 public class Search {
-    static int search(double arr[], double target, int start, int end) {
+    public int search(double arr[], double target, int start, int end) {
         if (start > end)
             return -1;
 
@@ -13,7 +15,7 @@ public class Search {
             return search(arr, target, start, middle - 1);
     }
 
-    static int search(String arr[], String target, int start, int end) {
+    public int search(String arr[], String target, int start, int end) {
         if (start > end)
             return -1;
 

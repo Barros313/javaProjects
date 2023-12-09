@@ -1,3 +1,5 @@
+import binarySearch.Search;
+
 public class Main {
     public static void main(String args[]) {
         double numericalInput = 0d;
@@ -17,6 +19,8 @@ public class Main {
             }
         }
 
+        Search searchObj = new Search();
+
         double floatingNumbers[] = {-451.98, -3.25, -.58, 0, 10.5, 58.95, 152.456, 478.652};
         String names[] = {"Gabriel Barros", "Iorhana Cleia", "Matheus Marques", "Vinicius Nascimento"};
 
@@ -24,12 +28,12 @@ public class Main {
         if (isDigit)
         {
             System.out.println("Searching for " + numericalInput + ":");
-            searchResult = Search.search(floatingNumbers, numericalInput, 0, (floatingNumbers.length - 1));
+            searchResult = searchObj.search(floatingNumbers, numericalInput, 0, (floatingNumbers.length - 1));
         }
         else
         {
             System.out.println("Searching for " + "\"" +  argument + "\"" + ":");
-            searchResult = Search.search(names, argument, 0, (names.length - 1));
+            searchResult = searchObj.search(names, argument, 0, (names.length - 1));
         }
 
         if (searchResult == -1)
