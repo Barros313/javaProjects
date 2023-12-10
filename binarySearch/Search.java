@@ -21,9 +21,9 @@ public class Search {
 
         int middle = (start + end) / 2;
 
-        if (arr[middle].compareTo(target) == 0)
+        if (arr[middle].compareToIgnoreCase(target) == 0)
            return middle;
-        else if (target.compareTo(arr[middle]) > 0)
+        else if (target.compareToIgnoreCase(arr[middle]) > 0)
            return search(arr, target, middle + 1, end);
         else
            return search(arr, target, start, middle - 1);
